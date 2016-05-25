@@ -1,0 +1,30 @@
+<h1>User Registration</h1>
+
+<div class="username-box">
+  <%= form_for :user, url: { action: "create" } do |f| %>
+  <%= render partial: 'shared/error_messages', locals: { object: @user } %>
+    <p>
+      <%= f.label :username %><br>
+      <%= f.text_field :username, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, class: 'form-control'  %>
+    </p>
+
+    <p>
+      <%= f.submit "Create account" %>
+    </p>
+
+  <% end %>
+</div>
+
+<div>
+  <p>Are you a judge? Click <%= link_to "here", judges_register_path %> to register.</p>
+</div>
