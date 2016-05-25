@@ -1,0 +1,10 @@
+<div class="review-info">
+  <p><%= review.description %></p>
+  <ul>
+    <li>Stars: <%= review.stars %></li>
+    <li><%= review.user.username %></li>
+  </ul>
+  <% if logged_in? %>
+    <%= link_to "comment", new_comment_path %>
+  <% end %>
+</div>

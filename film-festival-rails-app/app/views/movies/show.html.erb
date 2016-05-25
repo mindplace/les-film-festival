@@ -1,0 +1,24 @@
+<h2><%= @movie.title %></h2>
+
+<p><%= @movie.description %></p>
+
+<p><%= @movie.category.title %></p>
+
+
+<h3>Reviews</h3>
+
+<div id="list-of-reviews">
+
+  <% @movie.reviews.each do |review| %>
+    <%= render partial: "movie_review_info", locals: {review: review} %>
+  <% end %>
+
+</div>
+
+<% if logged_in? %>
+
+  <div id="add-new-review">
+    <%= link_to "post a review", new_review_path %>
+  </div>
+
+<% end %>
