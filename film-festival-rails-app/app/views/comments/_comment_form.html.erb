@@ -1,0 +1,9 @@
+<%= form_for :comment, html: { id: "comment_form"} do |f| %>
+
+  <%= render partial: "error_messages", locals: {object: @comment} %>
+
+  <%= f.label :body %>:
+  <%= f.text_field :body %><br>
+
+  <%= f.submit %>
+<% end %>
