@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :reviewed_movies, through: :reviews, source: :movie
 
   def is_valid_email
-    unless email.match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z\i/)
+    unless email.match(/\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i)
       self.errors[:email].push("Not a valid email address: should resemble 'user@example.com'")
     end
   end
