@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     role == "admin"
   end
 
+  def user?
+    role == "user"
+  end
+
   def determine_role
     self.role = TOKENS[token]
     self.errors[:token].push("Incorrect token") if role.nil?
