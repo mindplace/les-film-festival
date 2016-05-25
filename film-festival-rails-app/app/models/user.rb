@@ -9,8 +9,9 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :reviewed_movies, through: :reviews, source: :movie
 
-  JUDGE_TOKEN = "judge-token-123"
-  ADMIN_TOKEN = "admin-token-456"
+  attr_accessor :token
+
+  TOKENS = {"judge-token-123" => "judge", "admin-token-456" => "admin"}
 
   def is_valid_email
     unless email.match(/\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i)
@@ -24,6 +25,11 @@ class User < ActiveRecord::Base
 
   def admin?
     role == "admin"
+  end
+
+  def determine_role
+    self.role = TOKENS[token]
+    self.errors[:token].push("Incorrect token") if role.nil?
   end
 
   def self.judges

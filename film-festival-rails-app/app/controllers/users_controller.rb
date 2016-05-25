@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    if logged_in?
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def new_judge
@@ -20,22 +24,13 @@ class UsersController < ApplicationController
 
   def create_judge
     @user = User.create(judge_params)
-
-    if @user.token
-      if @user.token == User::JUDGE_TOKEN
-        @user.role = "judge"
-      elsif @user.token == User::ADMIN_TOKEN
-        @user.role = "admin"
-      else
-        @user.errors[:token].push("Incorrect token")
-      end
-    end
+    @user.determine_role
 
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render 'new'
+      render 'new_judge'
     end
   end
 
@@ -46,10 +41,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password).merge(role: "user")
+    params.require(:user).permit(:username, :password, :email).merge(role: "user")
   end
 
   def judge_params
-    params.require(:user).permit(:username, :password, :token)
+    params.require(:user).permit(:username, :password, :token, :email)
   end
 end
