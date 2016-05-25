@@ -1,56 +1,39 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # sessions routes
+  get   'login',  to: "sessions#new"
+  post  'login',  to: "sessions#create"
+  get   'logout', to: "sessions#destroy"
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  # category [index, show]
+  resources :categories, only: [:index, :show]
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # movie - should index page be "top movies for categry"?
+  resources :movies, only: [:index, :show]
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  # review
+  # index page lists 10 most recent reviews overall, AND 5 most recent per category
+  resources :reviews, only: [:new, :create, :index]
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  # comment
+  resources :comments, only: [:new, :create]
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  # user
+  resources :users, only: [:new, :create, :show]
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  # judge
+  get   'judges',           to: "users#index"
+  get   'judges/register',  to: "users#new_judge"
+  post  'judges',           to: "users#create_judge"
+  get   'judges/:id',       to: "users#show",       as: "judge"
+  get   'judges/login',     to: "sessions#new"
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  # welcome/root
+  root "application#index"
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  # static pages: tickets, venue, winners - stretch
+  # get '/tickets',     to: "application#tickets",    as: "tickets"
+  # get '/venues',      to: "application#venues",     as: "venues"
+  # get '/winners',     to: "application#winners",    as: "winners"
+  # get '/contact',     to: "application#contact",    as: "contact"
 end
