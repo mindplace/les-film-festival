@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # category [index, show]
   resources :categories, only: [:index, :show]
 
-  # movie - should index page be "top movies for categry"?
+  # movie
+  # should movie index page be "top movies for category"?
   resources :movies, only: [:index, :show]
 
   # review

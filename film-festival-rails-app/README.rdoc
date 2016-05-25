@@ -1,28 +1,21 @@
-== README
+## Git workflow:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### update your local repo
+git checkout master
+git pull origin master
 
-Things you may want to cover:
+### make changes
+git checkout -b 'feature'
+*make changes*
+*add*
+*commit*
 
-* Ruby version
+### re-update local repo
+git checkout master
+git pull origin master
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### push your changes
+git checkout 'feature'
+git rebase master    
+git push origin 'feature'
+**make a pull request**
