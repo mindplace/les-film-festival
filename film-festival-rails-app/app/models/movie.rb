@@ -8,12 +8,24 @@ class Movie < ActiveRecord::Base
 
 
   def number_of_reviews
-    self.reviews.length
+    reviews.length
+  end
+
+  def judge_ratings
+    judge_reviews = reviews.select{ |r| r.user.judge? }
+    return 0 if judge_reviews.empty?
+    judge_reviews.map{ |r| r.stars }.inject(:+) / judge_reviews.length
+  end
+
+  def user_ratings
+    user_reviews = reviews.select{ |r| r.user.user? }
+    return 0 if user_reviews.empty?
+    user_reviews.map{ |r| r.stars }.inject(:+) / user_reviews.length
   end
 
   def average_rating
-    if self.number_of_reviews >= 1
-      ((self.reviews.reduce(0) {|sum, review| sum + review.stars}) / (self.number_of_reviews)).round(1)
+    if self.number_of_reviews > 0
+      ((judge_ratings * 0.8) + (user_ratings * 0.2)).round(1)
     else
       return "No ratings yet"
     end
