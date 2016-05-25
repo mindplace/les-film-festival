@@ -1,0 +1,10 @@
+<h2><%= @category.title %> Selections</h2>
+
+
+<% @category.movies.each do |movie| %>
+  <ul>
+    <li><%= link_to movie.title, movie_path(movie) %></li>
+    <li>Number of Reviews: <%= movie.number_of_reviews %></li>
+    <li>Average Rating: <%= movie.average_rating %></li>
+  </ul>
+<% end %>
