@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # judge
   get   'judges',           to: "users#index"
   get   'judges/register',  to: "users#new_judge"
-  post  'judges',           to: "users#create_judge"
+  post  'judges/register',  to: "users#create_judge"
   get   'judges/login',     to: "sessions#new"
   get   'judges/:id',       to: "users#show",       as: "judge"
 

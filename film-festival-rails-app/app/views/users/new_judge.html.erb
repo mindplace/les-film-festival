@@ -1,0 +1,31 @@
+<h1>Judge Registration</h1>
+
+<div class="username-box">
+  <%= form_for :user do |f| %>
+  <%= render partial: 'shared/error_messages', locals: { object: @user } %>
+    <p>
+      <%= f.label :username %><br>
+      <%= f.text_field :username, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, class: 'form-control'  %>
+    </p>
+
+    <p>
+      <%= f.label :token %><br>
+      <%= f.password_field :token, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.submit "Create account" %>
+    </p>
+
+  <% end %>
+</div>
