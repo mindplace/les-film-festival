@@ -7,7 +7,7 @@
   <h2><%= @user.username %>'s reviews:</h2>
   <ul>
     <% @user.reviews.each do |review| %>
-      <li>Reviewed <%= link_to review.movie, movie_path(review.movie) %>, <%= review.comments.length %> comments</li>
+      <li>Reviewed <%= link_to review.movie.title, movie_path(review.movie) %>, <%= review.comments.length %> comments</li>
     <% end %>
   </ul>
 <% end %>
@@ -17,7 +17,7 @@
   <h2><%= @user.username %>'s comments:</h2>
   <ul>
     <% @user.comments.each do |comment| %>
-      <li><%= link_to comment.review.movie, movie_path(comment.review.movie) %>: <%= comment.blurb %></li>
+      <li><%= link_to comment.review.movie.title, movie_path(comment.review.movie) %>: <%= comment.blurb %></li>
     <% end %>
   </ul>
 <% end %>

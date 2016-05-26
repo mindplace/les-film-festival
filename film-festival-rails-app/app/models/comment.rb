@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
   belongs_to :review
 
   def blurb
-    description.split[0..10].join(" ") + "..."
+    body.split[0..10].join(" ") + "..."
   end
 end
