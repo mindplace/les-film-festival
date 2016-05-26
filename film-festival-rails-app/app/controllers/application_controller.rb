@@ -12,4 +12,18 @@ class ApplicationController < ActionController::Base
 
   def index
   end
+
+  def tickets
+  end
+
+  def venues
+  end
+
+  def winners
+    @overall_winner = Movie.overall_winner
+    @categories = Category.all
+  end
+
+  def contact
+  end
 end

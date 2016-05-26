@@ -35,8 +35,8 @@ Rails.application.routes.draw do
   root "application#index"
 
   # static pages: tickets, venue, winners - stretch
-  # get '/tickets',     to: "application#tickets",    as: "tickets"
-  # get '/venues',      to: "application#venues",     as: "venues"
-  # get '/winners',     to: "application#winners",    as: "winners"
-  # get '/contact',     to: "application#contact",    as: "contact"
+  get 'tickets',     to: "application#tickets",    as: "tickets"
+  get 'venues',      to: "application#venues",     as: "venues"
+  get 'winners',     to: "application#winners",    as: "winners"
+  get 'contact',     to: "application#contact",    as: "contact"
 end
