@@ -39,7 +39,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.four_samples
-    Movie.
+    Movie.order("RAND()").first(4)
   end
 
   def self.overall_winner
