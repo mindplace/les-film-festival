@@ -1,13 +1,11 @@
-<h1>Recent Reviews</h1>
+<h1><%= link_to "Recent Reviews", reviews_path, :id => "reveiws_all_link" %></h1>
+
+<h1><%= link_to "Most Recent Reviews by Category", reviews_path, :id => "reviews_category_link" %></h1>
 
 <div id="reviews_all_list">
 <ul>
   <% @reviews.reverse[0..10].each do |review| %>
-  <%= review.updated_at %><br>
-  <%= review.description %><br>
-  <li>Movie: <%= review.movie.title%></li>
-  <li>Stars: <%= review.stars%></li>
-  <li><%= review.user.username %></li>
+  <%= render partial: "individual_review", locals: { review: review} %>
   <br>
   <% end %>
 </ul>
@@ -20,11 +18,7 @@
   <h2><%= category.title%></h2>
 <ul>
   <% category.five_most_recent_reviews.each do |review| %>
-  <%= review.updated_at %><br>
-  <%= review.description %><br>
-  <li>Movie: <%= review.movie.title%></li>
-  <li>Stars: <%= review.stars%></li>
-  <li><%= review.user.username %></li>
+  <%= render partial: "individual_review", locals: { review: review} %>
   <br>
   <% end %>
 </ul>

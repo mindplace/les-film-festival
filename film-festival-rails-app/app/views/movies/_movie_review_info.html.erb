@@ -2,7 +2,11 @@
   <p><%= review.description %></p>
   <ul>
     <li>Stars: <%= review.stars %></li>
-    <li><%= review.user.username %></li>
+    <% if review.user.role == "judge" %>
+    <li><%= link_to review.user.username, judges_path %></li>
+    <% else %>
+    <li><%= link_to review.user.username, user_path(review.user)%></li>
+  <% end %>
   </ul>
 
   <h4>Comments</h4>
@@ -13,6 +17,8 @@
   </div>
 
   <% if logged_in? %>
-    <%= link_to "comment", new_review_comment_path(review) %>
+    <%= link_to "comment", new_movie_review_comment_path(review.movie,review) %>
   <% end %>
 </div>
+
+
