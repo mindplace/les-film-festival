@@ -1,36 +1,32 @@
 <main class="Site-content">
 <div class="container">
-<form class="form-horizontal" role="form">
 <h1>Registration</h1>
 
-<div class="form_group">
-<div class="username-box">
-  <%= form_for :user, url: { action: "create" } do |f| %>
   <%= render partial: 'shared/error_messages', locals: { object: @user } %>
 
-    <div class="row-xs-3">
-      <%= f.label :username %><br>
+<div class="username-box">
+  <%= form_for :user, url: { action: "create" } do |f| %>
+
+    <div class="row-xs-3 form_group">
+      <%= f.label :username %>
       <%= f.text_field :username, class: 'form-control' %>
-    </div>
+    </div><br>
 
-    <div class="row-xs-3">
-      <%= f.label :email %><br>
+    <div class="row-xs-3 form_group">
+      <%= f.label :email %>
       <%= f.text_field :email, class: 'form-control' %>
-    </div>
+    </div><br>
 
-    <div class="row-xs-3">
-      <%= f.label :password %><br>
+    <div class="row-xs-3 form_group">
+      <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control'  %>
     </div>
     <br>
-    <input class="btn btn-default" <%= f.submit "Create account" %>
+    <%= f.submit "Create account", class: "btn btn-default" %>
 
   <% end %>
-</div>
-</form>
-<div><br>
+  <br>
   <p>Are you a judge? Click <%= link_to "here", judges_register_path %> to register.</p>
 </div>
-</form>
 </div>
 </main>
