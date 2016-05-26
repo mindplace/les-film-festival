@@ -39,7 +39,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.overall_winner
-    reviews = Movie.all.map{|movie| movie.reviews}.flatten
-    reviews.sort_by{|review| review.stars}.last.movie
+    reviewed_movies = Movie.all.select{|movie| movie.average_rating.is_a?(Float)}
+    reviewed_movies.sort_by{|movie| movie.average_rating}.last
   end
 end
