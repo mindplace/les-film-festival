@@ -1,4 +1,11 @@
 <div class="comment-info">
   <p><%= comment.body %></p>
   <p><%= comment.user.username %></p>
+
+  <div class="comment-edit-delete">
+  <% if comment.user == current_user %>
+    <%= link_to "edit comment", edit_movie_review_comment_path(comment.review.movie, comment.review, comment) %>
+    <%= link_to "delete comment", [comment.review.movie, comment.review, comment], method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
+  </div>
 </div>

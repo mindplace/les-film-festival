@@ -9,6 +9,14 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def edit
+    @review = Review.find_by(id: params[:id])
+
+    if current_user != @review.user
+      redirect_to movie_path(@review.movie)
+    end
+  end
+
   def create
     @review = Review.new(review_params)
     @review.user = current_user
@@ -21,7 +29,23 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
+  def update
+    review = Review.find_by(id: params[:id])
+
+    if review.update(review_params)
+      redirect_to movie_path(review.movie)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    review = Review.find_by(id: params[:id])
+
+    review.destroy
+
+    redirect_to movie_path(review.movie)
+
   end
 
   private
