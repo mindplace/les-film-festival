@@ -4,12 +4,12 @@ class Category < ActiveRecord::Base
   has_many :movies
 
   def five_most_recent_reviews
-    all_reviews = movies.map do |movie|
-      movie.reviews
-    end.flatten
+    all_reviews = movies.map{|movie| movie.reviews.flatten
+    all_reviews.sort_by{|review| review.updated_at}.reverse[0..4]
+  end
 
-    all_reviews.sort_by do |review|
-      review.updated_at
-    end.reverse[0..4]
+  def winner
+    reviews = movies.map{|movie| movie.reviews}.flatten
+    reviews.sort_by{|review| review.stars}.last.movie
   end
 end

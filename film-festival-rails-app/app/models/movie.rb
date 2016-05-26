@@ -6,7 +6,6 @@ class Movie < ActiveRecord::Base
   has_many :reviews
   has_many :comments, through: :reviews
 
-
   def number_of_reviews
     reviews.length
   end
@@ -37,5 +36,10 @@ class Movie < ActiveRecord::Base
     else
       return "No ratings yet"
     end
+  end
+
+  def self.overall_winner
+    reviews = Movie.all.map{|movie| movie.reviews}.flatten
+    reviews.sort_by{|review| review.stars}.last.movie
   end
 end

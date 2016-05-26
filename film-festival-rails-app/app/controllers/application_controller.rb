@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
   end
 
   def winners
+    @overall_winner = Movie.overall_winner
+    @categories = Category.all
   end
 
   def contact
