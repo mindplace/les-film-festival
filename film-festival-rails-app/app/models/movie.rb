@@ -38,8 +38,20 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  def stars
+    if average_rating.is_a?(Float)
+      "#{average_rating} stars"
+    else
+      average_rating
+    end
+  end
+
   def self.four_samples
-    Movie.order("RAND()").first(4)
+    sample_ids = [rand(10), rand(11..20), rand(21..30), rand(31..40)]
+    sample_ids.map do |id|
+      movie = Movie.find_by(id: id)
+      movie.is_a?(Movie) ? movie : Movie.last
+    end
   end
 
   def self.overall_winner
