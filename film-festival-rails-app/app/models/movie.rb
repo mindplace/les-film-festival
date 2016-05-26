@@ -11,6 +11,14 @@ class Movie < ActiveRecord::Base
     reviews.length
   end
 
+  def judge_reviews
+    self.reviews.select {| review | review.user.role == "judge"}
+  end
+
+  def user_reviews
+    self.reviews.select {| review | review.user.role == "user"}
+  end
+
   def judge_ratings
     judge_reviews = reviews.select{ |r| r.user.judge? }
     return 0 if judge_reviews.empty?

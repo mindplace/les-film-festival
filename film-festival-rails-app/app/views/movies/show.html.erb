@@ -5,11 +5,21 @@
 <p><%= @movie.category.title %></p>
 
 
-<h3>Reviews</h3>
+<h3>Judge Reviews</h3>
 
-<div id="list-of-reviews">
+<div id="list-of-judge-reviews">
 
-  <% @movie.reviews.each do |review| %>
+  <% @movie.judge_reviews.each do |review| %>
+    <%= render partial: "movie_review_info", locals: {review: review} %>
+  <% end %>
+
+</div>
+
+<h3>User Reviews</h3>
+
+<div id="list-of-judge-reviews">
+
+  <% @movie.user_reviews.each do |review| %>
     <%= render partial: "movie_review_info", locals: {review: review} %>
   <% end %>
 
