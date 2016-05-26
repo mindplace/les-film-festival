@@ -43,4 +43,5 @@ class User < ActiveRecord::Base
   def self.admins
     User.where(role: "admin")
   end
+
 end

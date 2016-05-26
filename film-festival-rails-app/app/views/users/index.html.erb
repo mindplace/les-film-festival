@@ -1,0 +1,11 @@
+<h2>Judges for the 2016 festival</h2>
+
+
+<div id="list-of-judges">
+  <% @judges.each do | judge | %>
+    <div class="judge-info"
+      <h3><%= judge.username %></h3>
+      <p>Bio: <br> <%= Faker::Hipster.paragraph %></p>
+    </div>
+  <% end %>
+</div>
