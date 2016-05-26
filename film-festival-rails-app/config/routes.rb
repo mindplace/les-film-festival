@@ -13,19 +13,16 @@ Rails.application.routes.draw do
   # movie
   # should movie index page be "top movies for category"?
 
-  # review and comments
+  # movies and reviews and comments
   # index page lists 10 most recent reviews overall, AND 5 most recent per category
   resources :movies, only: [:index, :show] do
-    resources :reviews, only: [:new, :create] do
-      resources :comments, only: [:new, :create]
+    resources :reviews, only: [:new, :edit, :create, :update, :destroy] do
+      resources :comments, only: [:new, :edit, :create, :update, :destroy]
     end
   end
 
   #review index route
   get 'reviews', to: 'reviews#index'
-
-  # comment
-  # resources :comments, only: [:new, :create]
 
   # user
   resources :users, only: [:new, :create, :show]

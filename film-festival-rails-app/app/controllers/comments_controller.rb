@@ -4,6 +4,15 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
+  def edit
+    @comment = Comment.find_by(id: params[:id])
+
+    if current_user != @comment.user
+      redirect_to movie_path(@comment.review.movie)
+    end
+
+  end
+
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
@@ -14,6 +23,25 @@ class CommentsController < ApplicationController
     else
       render 'new'
     end
+
+  end
+
+  def update
+    comment = Comment.find_by(id: params[:id])
+
+    if comment.update(comment_params)
+      redirect_to movie_path(comment.review.movie)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    comment = Comment.find_by(id: params[:id])
+
+    comment.destroy
+
+    redirect_to movie_path(comment.review.movie)
 
   end
 

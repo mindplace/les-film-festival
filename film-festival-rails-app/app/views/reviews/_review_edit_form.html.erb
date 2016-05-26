@@ -1,0 +1,12 @@
+<%= form_for :review, :url => movie_review_path, html: { id: "review_form", :method => :put} do |f| %>
+
+  <%= render partial: "shared/error_messages", locals: {object: @review} %>
+
+  <%= f.label :description %>:
+  <%= f.text_area :description %><br>
+
+  <%= f.label :stars %>:
+  <%= f.number_field(:stars, in: 1.0..5.0, step: 0.5) %><br>
+
+  <%= f.submit %>
+<% end %>

@@ -9,6 +9,13 @@
   <% end %>
   </ul>
 
+  <div class="review-edit-delete">
+  <% if review.user == current_user %>
+    <%= link_to "edit review", edit_movie_review_path(review.movie, review) %>
+    <%= link_to "delete review", [review.movie, review], method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
+  </div>
+
   <h4>Comments</h4>
   <div class="comment-list">
     <% review.comments.each do |comment| %>
