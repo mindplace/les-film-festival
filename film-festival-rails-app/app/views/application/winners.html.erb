@@ -1,1 +1,14 @@
-<h1>Winners</h1>
+<h1>Overall Winner</h1>
+
+<div class="overall-winner">
+  <h1><%= link_to @overall_winner.title, movie_path(@overall_winner) %></h1>
+  <h2>Stars: <%= @overall_winner.average_rating %></h2>
+</div>
+
+<h1>Winners by Category</h1>
+
+<% @categories.each do |category| %>
+  <div class="category-winner">
+    <h2><%= link_to category.title, category_path(category) %>: <%= link_to category.winner.title, movie_path(category.winner) %>, <%= category.winner.average_rating %> stars</h3>
+  </div>
+<% end %>
