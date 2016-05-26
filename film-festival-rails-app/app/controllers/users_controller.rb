@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @judges = User.where(role: "judge").sort_by { | judge | judge.username }
+  end
+
   def new
     if logged_in?
       redirect_to root_path
