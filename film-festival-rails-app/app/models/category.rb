@@ -9,7 +9,7 @@ class Category < ActiveRecord::Base
   end
 
   def winner
-    reviews = movies.map{|movie| movie.reviews}.flatten
-    reviews.sort_by{|review| review.stars}.last.movie
+    reviewed_movies = movies.select{|movie| movie.average_rating.is_a?(Float)}
+    reviewed_movies.sort_by{|movie| movie.average_rating}.last
   end
 end
