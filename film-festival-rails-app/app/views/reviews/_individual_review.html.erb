@@ -4,7 +4,7 @@
 <li>Stars: <%= review.stars%></li>
 
 <% if review.user.role == "judge" %>
-  <li><%= link_to review.user.username, judge_path(review.user)%></li>
+  <li><%= link_to review.user.username, judges_path%></li>
 <% else %>
   <li><%= link_to review.user.username, user_path(review.user)%></li>
 <% end %>

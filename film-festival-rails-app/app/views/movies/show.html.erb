@@ -28,7 +28,7 @@
 <% if logged_in? %>
 
   <div id="add-new-review">
-    <%= link_to "post a review", new_review_path %>
+    <%= link_to "post a review", new_movie_review_path(@movie) %>
   </div>
 
 <% end %>
