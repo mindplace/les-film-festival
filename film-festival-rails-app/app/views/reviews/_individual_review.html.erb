@@ -1,4 +1,4 @@
-<%= review.updated_at %><br>
+<%= review.format_time %><br>
 <h3><%= review.description %><br></h3>
 <li>Movie: <%= link_to review.movie.title, movie_path(review.movie)%></li>
 <li>Stars: <%= review.stars%></li>
