@@ -1,19 +1,26 @@
-<h1>Log in</h1>
+<main class="Site-content">
+<div class="container">
+<form class="form-horizontal" role="form">
+<h1>Login</h1>
 
+<div class="form_group">
 <%= form_for :login do |f| %>
 <%= render partial: 'shared/error_messages', locals: { object: @user } %>
-  <p>
+  <div class="row-xs-3">
     <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </p>
+    <%= f.text_field :username, class: 'form-control' %>
+  </div>
 
-  <p>
+  <div class="row-xs-3">
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <br>
 
-  <p>
-    <%= f.submit "Login" %>
-  </p>
+   <input class="btn btn-default" <%= f.submit "Login" %>
 
 <% end %>
+</div>
+</form>
+</div>
+</main>
