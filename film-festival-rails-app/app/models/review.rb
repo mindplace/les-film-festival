@@ -13,4 +13,4 @@ class Review < ActiveRecord::Base
   def format_time
     updated_at.strftime("%B %d, %Y")
   end
-end'[]
+end
