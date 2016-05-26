@@ -12,4 +12,16 @@ class ApplicationController < ActionController::Base
 
   def index
   end
+
+  def tickets
+  end
+
+  def venues
+  end
+
+  def winners
+  end
+
+  def contact
+  end
 end
