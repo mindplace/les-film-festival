@@ -4,7 +4,15 @@
     <li>Stars: <%= review.stars %></li>
     <li><%= review.user.username %></li>
   </ul>
+
+  <h4>Comments</h4>
+  <div class="comment-list">
+    <% review.comments.each do |comment| %>
+      <%= render partial: "movie_comment_info", locals: {comment: comment} %>
+    <% end %>
+  </div>
+
   <% if logged_in? %>
-    <%= link_to "comment", new_comment_path %>
+    <%= link_to "comment", new_review_comment_path(review) %>
   <% end %>
 </div>

@@ -7,8 +7,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    # @comment.review =
-    binding.pry
+    @comment.review = Review.find_by(id: params[:review_id])
     # I need to figure out how I'm going to get the review information so I can assign the comment
 
     if @comment.save
