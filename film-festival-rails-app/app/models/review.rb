@@ -9,4 +9,8 @@ class Review < ActiveRecord::Base
   def blurb
     description.split[0..10].join(" ") + "..."
   end
+
+  def format_time
+    updated_at.strftime("%B %d, %Y")
+  end
 end

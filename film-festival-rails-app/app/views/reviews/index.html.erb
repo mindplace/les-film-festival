@@ -1,6 +1,6 @@
-<h1><%= link_to "Recent Reviews", reviews_path, :id => "reveiws_all_link" %></h1>
+<h1><%= link_to "Recent Reviews", reviews_path, :id => "reviews_all_link" %>&nbsp;&nbsp;&nbsp;<%= link_to "Most Recent Reviews by Category", reviews_path, :id => "reviews_category_link" %></h1>
 
-<h1><%= link_to "Most Recent Reviews by Category", reviews_path, :id => "reviews_category_link" %></h1>
+
 
 <div id="reviews_all_list">
 <ul>
@@ -11,8 +11,7 @@
 </ul>
 </div>
 
-
-<h1>Most Recent Reviews by Category</h1>
+<div id="category_reviews">
 <% @categories.each do |category| %>
 <div id="reviews_category_list">
   <h2><%= category.title%></h2>
@@ -24,3 +23,4 @@
 </ul>
 </div>
 <% end %>
+</div>
