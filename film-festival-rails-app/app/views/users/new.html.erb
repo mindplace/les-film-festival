@@ -7,6 +7,7 @@
 <div class="username-box">
   <%= form_for :user, url: { action: "create" } do |f| %>
   <%= render partial: 'shared/error_messages', locals: { object: @user } %>
+
     <div class="row-xs-3">
       <%= f.label :username %><br>
       <%= f.text_field :username, class: 'form-control' %>

@@ -1,31 +1,38 @@
+<main class="Site-content">
+<div class="container">
+<form class="form-horizontal" role="form">
+
 <h1>Judge Registration</h1>
 
+<div class="form_group">
 <div class="username-box">
   <%= form_for :user do |f| %>
   <%= render partial: 'shared/error_messages', locals: { object: @user } %>
-    <p>
+      <div class="row-xs-3">
       <%= f.label :username %><br>
       <%= f.text_field :username, class: 'form-control' %>
-    </p>
+    </div>
 
-    <p>
+    <div class="row-xs-3">
       <%= f.label :email %><br>
       <%= f.text_field :email, class: 'form-control' %>
-    </p>
+    </div>
 
-    <p>
+    <div class="row-xs-3">
       <%= f.label :password %><br>
       <%= f.password_field :password, class: 'form-control'  %>
-    </p>
+    </div>
 
-    <p>
+    <div class="row-xs-3">
       <%= f.label :token %><br>
       <%= f.password_field :token, class: 'form-control' %>
-    </p>
+    </div>
+    <br>
 
-    <p>
-      <%= f.submit "Create account" %>
-    </p>
+      <input class="btn btn-default" <%= f.submit "Create account" %>
 
   <% end %>
 </div>
+</form>
+</div>
+</main>
