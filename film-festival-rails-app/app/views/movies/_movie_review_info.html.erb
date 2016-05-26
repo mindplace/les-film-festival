@@ -1,19 +1,22 @@
 <div class="review-info">
   <p><%= review.description %></p>
-  <ul>
-    <li>Stars: <%= review.stars %></li>
+  <p> | </p>
+  <p>Rating: <%= review.stars %></p>
+  <ul class="review-sub-info">
     <% if review.user.role == "judge" %>
-    <li><%= link_to review.user.username, judges_path %></li>
+      <li><%= link_to review.user.username, judges_path %></li>
     <% else %>
-    <li><%= link_to review.user.username, user_path(review.user)%></li>
-  <% end %>
+      <li><%= link_to review.user.username, user_path(review.user)%></li>
+    <% end %>
+    <% if review.user == current_user %>
+      <li>|</li>
+      <li><%= link_to "edit review", edit_movie_review_path(review.movie, review) %></li>
+      <li>|</li>
+      <li><%= link_to "delete review", [review.movie, review], method: :delete, data: {confirm: "Are you sure?"} %></li>
+    <% end %>
   </ul>
 
   <div class="review-edit-delete">
-  <% if review.user == current_user %>
-    <%= link_to "edit review", edit_movie_review_path(review.movie, review) %>
-    <%= link_to "delete review", [review.movie, review], method: :delete, data: {confirm: "Are you sure?"} %>
-  <% end %>
   </div>
 
   <h4>Comments</h4>
@@ -24,7 +27,7 @@
   </div>
 
   <% if logged_in? %>
-    <%= link_to "comment", new_movie_review_comment_path(review.movie,review) %>
+    <%= link_to "leave a comment", new_movie_review_comment_path(review.movie,review) %>
   <% end %>
 </div>
 

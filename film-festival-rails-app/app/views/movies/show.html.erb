@@ -1,39 +1,45 @@
-<h2><%= @movie.title %></h2>
+<main class="Site-content">
+  <div class="container-fluid">
+    <div class="container">
+      <h2><%= @movie.title %></h2>
 
-<p><%= @movie.description %></p>
+      <p><%= @movie.description %></p>
 
-<p><%= @movie.category.title %></p>
+      <p id="movie-category"><%= @movie.category.title %></p>
+    </div>
 
 
-<h3>Judge Reviews</h3>
+    <div class="container" id="reviews-container">
+      <h3>Judge Reviews</h3>
 
-<div id="list-of-judge-reviews">
+      <div id="list-of-judge-reviews">
+        <% @movie.judge_reviews.each do |review| %>
+          <%= render partial: "movie_review_info", locals: {review: review} %>
+        <% end %>
+      </div>
 
-  <% @movie.judge_reviews.each do |review| %>
-    <%= render partial: "movie_review_info", locals: {review: review} %>
-  <% end %>
+      <h3>User Reviews</h3>
+      <div id="list-of-judge-reviews">
+        <% if @movies.user_reviews.length == 0 %>
+          <p>There are no user reviews currently!</p>
+        <% else %>
+        <% @movie.user_reviews.each do |review| %>
+          <%= render partial: "movie_review_info", locals: {review: review} %>
+        <% end %>
+        <% end %>
+      </div>
 
-</div>
-
-<h3>User Reviews</h3>
-
-<div id="list-of-judge-reviews">
-
-  <% @movie.user_reviews.each do |review| %>
-    <%= render partial: "movie_review_info", locals: {review: review} %>
-  <% end %>
-
-</div>
-
-<% if logged_in? %>
-
-  <div id="add-new-review">
-    <%= link_to "post a review", new_movie_review_path(@movie) %>
+    </div>
+      <div class="container" id="movie-show-bottom">
+      <% if logged_in? %>
+        <div id="add-new-review">
+          <%= link_to "post a review", new_movie_review_path(@movie), class: "btn btn-success" %>
+        </div>
+      <% else %>
+        <div id="signup-login-to-post">
+          <p>Please <%=link_to "sign up", new_user_path %> or <%= link_to "login", login_path %> to leave reviews and comments! </p>
+        </div>
+      <% end %>
+      </div>
   </div>
-<% else %>
-
-  <div id="signup-login-to-post">
-    <p>Please <%=link_to "sign up", new_user_path %> or <%= link_to "login", login_path %> to leave reviews and comments! </p>
-  </div>
-
-<% end %>
+</main>
