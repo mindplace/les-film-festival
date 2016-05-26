@@ -1,1 +1,34 @@
 <h1>Venues</h1>
+
+<div class="venue-box">
+  <h2><a href="https://www.landmarktheatres.com/new-york-city/sunshine-cinema">Sunshine Cinema</a></h2>
+  <p>143 E Houston St, New York, NY 10002</p>
+  <h3>Festival movies playing here:</h3>
+  <ul>
+    <% Movie.four_samples.each do |movie| %>
+      <li><%= link_to movie.title, movie_path(movie) %>, <%= movie.stars %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="venue-box">
+  <h2><a href="http://metrograph.com/">Metrograph</a></h2>
+  <p>7 Ludlow St, New York, NY 10002</p>
+  <h3>Festival movies playing here:</h3>
+  <ul>
+    <% Movie.four_samples.each do |movie| %>
+      <li><%= link_to movie.title, movie_path(movie) %>, <%= movie.stars %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="venue-box">
+  <h2><a href="http://anthologyfilmarchives.org/">Anthology Film Archives</a></h2>
+  <p>32 2nd Ave, New York, NY 10003</p>
+  <h3>Festival movies playing here:</h3>
+  <ul>
+    <% Movie.four_samples.each do |movie| %>
+      <li><%= link_to movie.title, movie_path(movie) %>, <%= movie.stars %></li>
+    <% end %>
+  </ul>
+</div>
