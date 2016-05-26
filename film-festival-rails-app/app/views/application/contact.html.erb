@@ -1,11 +1,15 @@
-<h2><%= link_to "Tickets", tickets_path %></h2>
-<p>Tickets issues hotline: <%= Faker::PhoneNumber.cell_phone %></p>
-<p><%= Faker::Lorem.sentences(5).join(" ") %></p>
+<main class="Site-content">
+  <div class="container-fluid">
+    <h2><%= link_to "Tickets", tickets_path %></h2>
+    <p>Tickets issues hotline: <%= Faker::PhoneNumber.cell_phone %></p>
+    <p><%= Faker::Lorem.sentences(5).join(" ") %></p>
 
-<h2><%= link_to "Venues", venues_path %></h2>
-<p>Venues issues hotline: <%= Faker::PhoneNumber.cell_phone %></p>
-<p><%= Faker::Lorem.sentences(3).join(" ") %></p>
+    <h2><%= link_to "Venues", venues_path %></h2>
+    <p>Venues issues hotline: <%= Faker::PhoneNumber.cell_phone %></p>
+    <p><%= Faker::Lorem.sentences(3).join(" ") %></p>
 
-<h2>All other enquiries</h2>
-<p>General number: <%= Faker::PhoneNumber.cell_phone %></p>
-<p><%= Faker::Lorem.sentences(6).join(" ") %></p>
+    <h2>All other enquiries</h2>
+    <p>General number: <%= Faker::PhoneNumber.cell_phone %></p>
+    <p><%= Faker::Lorem.sentences(6).join(" ") %></p>
+  </div>
+</main>
