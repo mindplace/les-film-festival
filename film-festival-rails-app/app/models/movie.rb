@@ -38,6 +38,10 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  def self.four_samples
+    Movie.
+  end
+
   def self.overall_winner
     reviewed_movies = Movie.all.select{|movie| movie.average_rating.is_a?(Float)}
     reviewed_movies.sort_by{|movie| movie.average_rating}.last
