@@ -23,3 +23,7 @@ footer ul {
 footer ul li {
   display: inline-block;
 }
+
+.orange {
+  color: orange;
+}
