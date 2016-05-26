@@ -7,21 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "LES Film Festival", root_path %>
-<%= link_to "Categories", categories_path %>
-<%= link_to "Reviews", reviews_path %>
-<%= link_to "Judges", judges_path %>
-<% if logged_in? %>
-  <%= link_to "Logout", logout_path %>
-  <%= link_to current_user.username, user_path(current_user) %>
-<% else %>
-  <%= link_to "Register", new_user_path %>
-  <%= link_to "Login", login_path %>
-<% end %>
-<%= yield %>
+  <ul>
+    <li><%= link_to "LES Film Festival", root_path %></li>
+    <li><%= link_to "Categories", categories_path %></li>
+    <li><%= link_to "Judges", judges_path %></li>
+    <li><%= link_to "Winners", winners_path %></li>
+    <li><%= link_to "Reviews", reviews_path %></li>
+    <li><%= link_to "Tickets", tickets_path %></li>
+
+    <% if logged_in? %>
+    <li><%= link_to "Logout", logout_path %></li>
+    <li><%= link_to current_user.username, user_path(current_user) %></li>
+
+    <% else %>
+    <li><%= link_to "Register", new_user_path %></li>
+    <li><%= link_to "Login", login_path %></li>
+    <% end %>
+  </ul>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <ul>
+      <li><%= link_to "Contact", contact_path %></li>
+      <li><%= link_to "Venues", venues_path %></li>
+      <li><%= link_to "Judges Registration", judges_register_path %></li>
+      <li><%= link_to "Judges Login", judges_login_path %></li>
+    </ul>
+  </footer>
 </body>
-<footer>
-<%= link_to "Judges Registration", judges_register_path %>
-<%= link_to "Judges Login", judges_login_path %>
-</footer>
 </html>
