@@ -3,9 +3,9 @@
     <p><%= comment.body %></p>
     <ul class="comment-sub-info">
     <% if comment.user.role == "user" %>
-      <li class="comment-username"><%= link_to comment.user.username, user_path(comment.user) %></li>
+      <li class="comment-username"><span class="splash-color">Commenter: </span><%= link_to comment.user.username, user_path(comment.user) %></li>
     <% elsif comment.user.role == "judge" %>
-      <li class="comment-username"><%= link_to comment.user.username, judges_path %></li>
+      <li class="comment-username"><span class="splash-color">Commenter: </span><%= link_to comment.user.username, judges_path %></li>
     <% end %>
     <% if comment.user == current_user %>
       <li>|</li>
