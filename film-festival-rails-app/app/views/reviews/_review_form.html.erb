@@ -1,6 +1,6 @@
 <%= form_for :review, html: { id: "review_form"} do |f| %>
 
-  <%= render partial: "error_messages", locals: {object: @review} %>
+  <%= render partial: "shared/error_messages", locals: {object: @review} %>
 
   <%= f.label :description %>:
   <%= f.text_field :description %><br>

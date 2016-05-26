@@ -1,9 +1,9 @@
-<%= form_for :comment, html: { id: "comment_form"} do |f| %>
+<%= form_for :comment, url: {action: "create"}, html: { id: "comment_form"} do |f| %>
 
-  <%= render partial: "error_messages", locals: {object: @comment} %>
+  <%= render partial: "shared/error_messages", locals: {object: @comment} %>
 
   <%= f.label :body %>:
-  <%= f.text_field :body %><br>
+  <%= f.text_area :body %><br>
 
   <%= f.submit %>
 <% end %>
