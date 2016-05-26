@@ -2,7 +2,7 @@
 <p>Tickets issues hotline: <%= Faker::PhoneNumber.cell_phone %></p>
 <p><%= Faker::Lorem.sentences(5).join(" ") %></p>
 
-<h2>Venues</h2>
+<h2><%= link_to "Venues", venues_path %></h2>
 <p>Venues issues hotline: <%= Faker::PhoneNumber.cell_phone %></p>
 <p><%= Faker::Lorem.sentences(3).join(" ") %></p>
 
