@@ -1097,7 +1097,8 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  /*color: #337ab7;*/
+  color: rgb(187, 79, 34);
   text-decoration: none;
 }
 a:hover,
@@ -4170,7 +4171,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
