@@ -1,12 +1,11 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
-  $("#add-new-review").on("click", "a", function(e) {
-    e.preventDefault();
-    debugger;
-
+//   $("#add-new-review").on("click", "a", function(e) {
+//     e.preventDefault();
 
 
 
-  });
 
-});
+//   });
+
+// });
