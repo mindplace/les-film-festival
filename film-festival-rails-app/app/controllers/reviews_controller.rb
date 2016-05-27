@@ -2,7 +2,12 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
-    @categories = Category.all
+    @drama = Category.find_by(title: "Drama")
+    @comedy = Category.find_by(title: "Comedy")
+    @thriller = Category.find_by(title: "Thriller/Horror")
+    @musical = Category.find_by(title: "Musical")
+    @action = Category.find_by(title: "Action/Adventure")
+    @documentary = Category.find_by(title: "Documentary")
   end
 
   def new

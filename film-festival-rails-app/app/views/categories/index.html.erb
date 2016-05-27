@@ -7,14 +7,13 @@
     </div>
 
 
-      <div class="venue-container">
+    <div class="venue-container">
       <% @categories.each do |category| %>
         <div class="venue-box">
           <h2 class="category-index-h2"><%= link_to category.title, category_path(category) %></h2>
           <h4 class="category-index-selections"><%= category.movies.length %> selections</h4>
         </div>
       <% end %>
-
     </div>
   </div>
 </div>
