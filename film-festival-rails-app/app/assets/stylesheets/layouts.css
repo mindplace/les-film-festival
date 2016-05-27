@@ -99,3 +99,11 @@ footer ul li {
   padding-top: 2%;
   font-size: large;
 }
+.review-box {
+  border: 1px solid #BB4F22;
+  padding: 1% 1% 1% 4%;
+  width: 40%;
+  margin: 1%;
+  display: inline-block;
+  flex-grow: 1;
+}
