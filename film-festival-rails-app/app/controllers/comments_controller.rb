@@ -1,7 +1,11 @@
 class CommentsController < ApplicationController
 
   def new
-    @comment = Comment.new
+    if !logged_in?
+      redirect_to root_path
+    else
+      @comment = Comment.new
+    end
   end
 
   def edit

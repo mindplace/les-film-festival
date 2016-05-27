@@ -11,7 +11,11 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new
+    if !logged_in?
+      redirect_to root_path
+    else
+      @review = Review.new
+    end
   end
 
   def edit
