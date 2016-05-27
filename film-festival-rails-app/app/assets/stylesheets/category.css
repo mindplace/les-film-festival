@@ -20,3 +20,16 @@
   transition: color 0.5s ease;
   text-decoration: none;
 }*/
+
+.category-index-header {
+  margin-left: 1.5em;
+}
+
+.venue-box  .category-index-h2 a {
+  color: #777;
+}
+
+.venue-box  .category-index-h2 a:hover {
+  color: #BB4F22;
+  transition: color 0.5s ease;
+}
