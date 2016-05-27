@@ -1,3 +1,10 @@
+<main class="Site-content">
+<div class="container">
 <h1>Leave a Comment</h1>
 
+  <%= render partial: "shared/error_messages", locals: {object: @comment} %>
+
 <%= render partial: "comment_form" %>
+
+</div>
+</main>

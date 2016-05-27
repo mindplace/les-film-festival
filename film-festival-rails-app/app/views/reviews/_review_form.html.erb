@@ -1,12 +1,15 @@
 <%= form_for :review, :url => movie_reviews_path, html: { id: "review_form", method: "post"} do |f| %>
 
-  <%= render partial: "shared/error_messages", locals: {object: @review} %>
+  <div class="row-xs-3 form_group">
+    <%= f.label :description %>:
+    <%= f.text_area :description, class: 'form-control' %>
+  </div><br>
 
-  <%= f.label :description %>:
-  <%= f.text_area :description %><br>
-
+  <div class="row-xs-3 form_group">
   <%= f.label :stars %>:
-  <%= f.number_field(:stars, in: 1.0..5.0, step: 0.5) %><br>
+  <%= f.number_field(:stars, in: 1.0..5.0, step: 0.5) %>
+</div>
+<br>
 
-  <%= f.submit %>
+  <%= f.submit "Submit post", class: "btn btn-success" %>
 <% end %>
