@@ -1,10 +1,20 @@
+
+<div class="container-fluid">
 <h2><%= @category.title %> Selections</h2>
 
 
 <% @category.movies.each do |movie| %>
-  <ul>
-    <li><%= link_to movie.title, movie_path(movie) %></li>
-    <li>Number of Reviews: <%= movie.number_of_reviews %></li>
-    <li>Average Rating: <%= movie.average_rating %></li>
-  </ul>
+<div class="category-box">
+  <h2><%= link_to movie.title, movie_path(movie) %></h2>
+  <h4>Number of Reviews: <%= movie.number_of_reviews %></h4>
+  <% if movie.average_rating.is_a?(Float) && movie.average_rating.round > 0%>
+  <h4><%= render partial: "shared/#{number_to_word(movie.average_rating.round)}_star" %></h4>
+  <% elsif movie.average_rating.is_a?(Float) && movie.average_rating.round < 1 %>
+    <h4>Average Rating: less than 1 star</h4>
+  <% else %>
+    <h4><%= movie.average_rating %></h4>
+  <% end %>
+</div>
 <% end %>
+</div>
+
