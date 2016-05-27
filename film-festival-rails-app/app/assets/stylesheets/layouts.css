@@ -45,7 +45,8 @@ footer ul li {
   color: orange;
 }
 .venue-box {
-  border: 1px solid grey;
+  border: 6px solid #BB4F22;
+  border-radius: 15px;
   padding: 2% 2% 4% 5%;
   width: 40%;
   margin: 2%;
