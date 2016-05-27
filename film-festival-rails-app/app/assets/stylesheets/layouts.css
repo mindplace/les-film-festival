@@ -95,3 +95,7 @@ footer ul li {
 .black-box {
   border: 1px solid black;
 }
+.padded-nav {
+  padding-top: 2%;
+  font-size: large;
+}

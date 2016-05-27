@@ -2,7 +2,7 @@
   <div class="container">
     <div class="venue-container">
       <div class="venue-box black-box">
-        <h2>Judges for the 2016 festival</h2>
+        <h2>Judges for the 2016 Festival</h2>
       </div>
     </div>
 
@@ -10,7 +10,7 @@
         <% @judges.each do | judge | %>
           <div class="venue-box">
             <h3><%= judge.username %></h3>
-            <p>Bio: <%= Faker::Lorem.paragraph %></p>
+            <p><span class="splash-color">Biography:</span> <%= Faker::Lorem.paragraph %></p>
           </div>
         <% end %>
     </div>
