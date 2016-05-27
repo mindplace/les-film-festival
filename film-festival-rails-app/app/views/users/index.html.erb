@@ -1,15 +1,18 @@
 <main class="Site-content">
-<div class="container-fluid">
-<h2 id="judge-index-header">Judges for the 2016 Festival</h2>
+  <div class="container">
+    <div class="venue-container">
+      <div class="venue-box black-box">
+        <h2>Judges for the 2016 festival</h2>
+      </div>
+    </div>
 
-<div class="venue-container">
-  <% @judges.each do | judge | %>
-  <div class="venue-box">
-      <h3><%= judge.username %></h3>
-      <p><span class="splash-color">Biography:</span><br> <%= Faker::Lorem.paragraph %></p>
+    <div class="venue-container">
+        <% @judges.each do | judge | %>
+          <div class="venue-box">
+            <h3><%= judge.username %></h3>
+            <p>Bio: <%= Faker::Lorem.paragraph %></p>
+          </div>
+        <% end %>
+    </div>
   </div>
-  <% end %>
-</div>
-</div>
 </main>
-

@@ -1,12 +1,18 @@
 <main class="Site-content">
   <div class="container-fluid">
-    <h1 class="special-h">Tickets</h1>
+    <div class="venue-container">
+      <div class="venue-box black-box">
+        <h1>Tickets</h1>
+      </div>
+    </div>
 
-    <div class="container-fluid">
-      <p>General admission: $15<br>
-        Student admission: $5<br>
-        Senior citizens: $4<br>
-        Special groups: please inquire <%= link_to "here", contact_path %>.</p>
+    <div class="venue-container">
+      <div class="venue-box">
+        <p>General admission: $15<br>
+          Student admission: $5<br>
+          Senior citizens: $4<br>
+          Special groups: please inquire <%= link_to "here", contact_path %>.</p>
+      </div>
     </div>
   </div>
 </main>

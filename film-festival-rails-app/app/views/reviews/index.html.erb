@@ -1,26 +1,32 @@
-<h1><%= link_to "Recent Reviews", reviews_path, :id => "reviews_all_link" %>&nbsp;&nbsp;&nbsp;<%= link_to "Most Recent Reviews by Category", reviews_path, :id => "reviews_category_link" %></h1>
+<main class="Site-content">
+  <div class="container">
 
+    <ul class="nav nav-tabs">
+      <li class="active"><%= link_to "Recent Reviews", reviews_path, :id => "reviews_all_link" %></li>
+      <li><%= link_to "By Category", reviews_path, :id => "reviews_category_link" %></li>
+    </ul>
 
+    <div class="venue-container">
+      <% @reviews.reverse[0..10].each do |review| %>
+        <div class="venue-box">
+          <%= render partial: "individual_review", locals: { review: review} %>
+        </div>
+      <% end %>
+    </div>
 
-<div id="reviews_all_list">
-<ul>
-  <% @reviews.reverse[0..10].each do |review| %>
-  <%= render partial: "individual_review", locals: { review: review} %>
-  <br>
-  <% end %>
-</ul>
-</div>
-
-<div id="category_reviews">
-<% @categories.each do |category| %>
-<div id="reviews_category_list">
-  <h2><%= category.title%></h2>
-<ul>
-  <% category.five_most_recent_reviews.each do |review| %>
-  <%= render partial: "individual_review", locals: { review: review} %>
-  <br>
-  <% end %>
-</ul>
-</div>
-<% end %>
-</div>
+      <% @categories.each do |category| %>
+          <div class="venue-container">
+            <div class="venue-box">
+              <h2><%= category.title%></h2>
+            </div>
+          </div>
+          <div class="venue-container">
+            <% category.five_most_recent_reviews.each do |review| %>
+            <div class="venue-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</main>
