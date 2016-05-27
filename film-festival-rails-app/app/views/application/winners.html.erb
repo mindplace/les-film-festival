@@ -1,13 +1,12 @@
 <main class="Site-content">
-  <div class="container-fluid" id="header-image">
-    <header class="custom-header">
-      <h1>Overall Winner</h1>
-
-        <div class="overall-winner">
-          <h1><%= link_to @overall_winner.title, movie_path(@overall_winner) %></h1>
-          <h2>Stars: <%= @overall_winner.average_rating %></h2>
-        </div>
-    </header>
+  <div class="container-fluid">
+    <div class="overall-winner">
+      <div class="inner-overall-winner">
+        <h2>Overall Winner</h2>
+        <h1><%= link_to @overall_winner.title, movie_path(@overall_winner) %></h1>
+        <h2><%= render partial: "shared/#{number_to_word(@overall_winner.average_rating.round)}_star" %></h2>
+      </div>
+    </div>
   </div>
 
   <div class="container-fluid">
@@ -18,7 +17,7 @@
         <div class="venue-box">
           <h2><%= category.title %></h2>
           <h1><%= link_to category.winner.title, movie_path(category.winner) %></h1>
-          <h2><%= render partial: "shared/#{number_to_word(category.winner.average_rating.round)}_star" %> stars</h2>
+          <h2><%= render partial: "shared/#{number_to_word(category.winner.average_rating.round)}_star" %></h2>
         </div>
       <% end %>
     </div>

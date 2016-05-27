@@ -16,7 +16,7 @@
   text-align: center;
 }
 .custom-header {
-  background-color: rgba(237, 132, 50, 0.5);
+  background-color: rgba(187, 79, 34, 0.4);
   padding: 250px 0 250px 0;
   margin: 0;
 }
@@ -45,7 +45,8 @@ footer ul li {
   color: orange;
 }
 .venue-box {
-  border: 1px solid grey;
+  border: 6px solid #BB4F22;
+  border-radius: 15px;
   padding: 2% 2% 4% 5%;
   width: 40%;
   margin: 2%;
@@ -53,7 +54,7 @@ footer ul li {
   flex-grow: 1;
 }
 .special-h {
-  padding: 5% 0 5% 2%;
+  padding: 2% 0 2% 3%;
 }
 .venue-container {
   display: flex;
@@ -64,4 +65,19 @@ footer ul li {
 
 .alert {
   width: 40%;
+}
+.overall-winner {
+  background-image: url(/assets/header.jpg);
+  background-size: cover !important;
+  border: 3px solid #BB4F22;
+  padding: 5%;
+  text-align: center;
+}
+.inner-overall-winner {
+  background-color: rgba(187, 79, 34, 0.6);
+  padding: 2%;
+  color: white;
+}
+.inner-overall-winner a {
+  color: white;
 }
