@@ -1,11 +1,9 @@
-<h2><%= review.format_time %></h2>
-<h3><%= review.description %></h3>
-<li>Movie: <%= link_to review.movie.title, movie_path(review.movie)%></li>
-<li>Stars: <%= review.stars%></li>
+<p><%= review.format_time %></p>
+<h4><%= link_to review.movie.title, movie_path(review.movie)%></h4>
+<p><%= render partial: "shared/#{number_to_word(review.movie.average_rating.round)}_star" %></p>
 
 <% if review.user.role == "judge" %>
-  <li><%= review.user.role%>: <%= link_to review.user.username, judges_path%></li>
+  <p><%= review.user.role%> <%= link_to review.user.username, judges_path%> says: <%= review.description %></p>
 <% else %>
-  <li><%= review.user.role%>: <%= link_to review.user.username, user_path(review.user)%></li>
+  <p><%= review.user.role%> <%= link_to review.user.username, user_path(review.user)%> says: <%= review.description %></p>
 <% end %>
-
