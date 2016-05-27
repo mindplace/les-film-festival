@@ -1,19 +1,25 @@
-<h1>Log in</h1>
+<main class="Site-content">
+<div class="container">
+
+<h1>Login</h1>
+
+<%= render partial: 'shared/error_messages', locals: { object: @user } %>
 
 <%= form_for :login do |f| %>
-<%= render partial: 'shared/error_messages', locals: { object: @user } %>
-  <p>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </p>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
+  <div class="row-xs-3 form_group">
+    <%= f.label :username %>
+    <%= f.text_field :username, class: 'form-control' %>
+  </div><br>
 
-  <p>
-    <%= f.submit "Login" %>
-  </p>
+  <div class="row-xs-3 form_group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <br>
+
+   <%= f.submit "Login", class: "btn btn-success" %>
 
 <% end %>
+</div>
+</main>

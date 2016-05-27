@@ -1,9 +1,9 @@
 <%= form_for :comment, :url => movie_review_comment_path, html: { id: "comment_form", :method => :put} do |f| %>
 
-  <%= render partial: "shared/error_messages", locals: {object: @comment} %>
-
+<div class="row-xs-3 form_group">
   <%= f.label :body %>:
-  <%= f.text_area :body %><br>
+  <%= f.text_area :body, class: 'form-control' %>
+</div><br>
 
-  <%= f.submit %>
+  <%= f.submit "Edit comment", class: "btn btn-success"  %>
 <% end %>
