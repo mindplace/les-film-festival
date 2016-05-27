@@ -1,12 +1,12 @@
 <main class="Site-content">
   <div class="container">
 
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs padded-nav">
       <li class="active"><%= link_to "Recent Reviews", reviews_path, :id => "reviews_all_link" %></li>
       <li><%= link_to "By Category", reviews_path, :id => "reviews_category_link" %></li>
     </ul>
 
-    <div class="venue-container">
+    <div class="venue-container" id="reviews_all_list">
       <% @reviews.reverse[0..10].each do |review| %>
         <div class="venue-box">
           <%= render partial: "individual_review", locals: { review: review} %>
@@ -16,13 +16,13 @@
 
       <% @categories.each do |category| %>
           <div class="venue-container">
-            <div class="venue-box">
+            <div class="venue-box black-box">
               <h2><%= category.title%></h2>
             </div>
           </div>
-          <div class="venue-container">
+          <div class="venue-container" id="category_reviews">
             <% category.five_most_recent_reviews.each do |review| %>
-            <div class="venue-box">
+            <div class="venue-box" id="category_reviews">
               <%= render partial: "individual_review", locals: { review: review} %>
             </div>
           <% end %>
