@@ -45,13 +45,16 @@ footer ul li {
   color: orange;
 }
 .venue-box {
-  border: 6px solid #BB4F22;
-  border-radius: 15px;
+  border: 3px solid #BB4F22;
   padding: 2% 2% 4% 5%;
   width: 40%;
   margin: 2%;
   display: inline-block;
   flex-grow: 1;
+}
+.venue-box a:hover {
+  text-decoration: none;
+  color: #D95C27;
 }
 .special-h {
   padding: 2% 0 2% 3%;

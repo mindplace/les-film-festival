@@ -4,7 +4,7 @@
 
 
 <% @category.movies.each do |movie| %>
-<div class="category-box">
+<div class="venue-box">
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
   <h4>Number of Reviews: <%= movie.number_of_reviews %></h4>
   <% if movie.average_rating.is_a?(Float) && movie.average_rating.round > 0%>
