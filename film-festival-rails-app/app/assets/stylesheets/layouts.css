@@ -74,6 +74,7 @@ footer ul li {
   border: 3px solid #BB4F22;
   padding: 5%;
   text-align: center;
+  margin: 1% 0;
 }
 .inner-overall-winner {
   background-color: rgba(187, 79, 34, 0.6);
@@ -83,4 +84,8 @@ footer ul li {
 .inner-overall-winner a {
   color: white;
 }
-
+.inner-index {
+  background-color: rgba(187, 79, 34, 0.8);
+  padding: 15% 2%;
+  color: white;
+}
