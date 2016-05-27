@@ -1,11 +1,13 @@
 <main class="Site-content">
-  <div class="container-fluid">
+  <div class="container-fluid" id="movie-show-container">
     <div class="container">
+      <div class="movie-box">
       <h2><span class="splash-color"><%= @movie.title %></span></h2>
 
       <p><%= @movie.description %></p>
 
-      <p id="movie-category"><%= @movie.category.title %></p>
+      <%= link_to @movie.category.title, category_path(@movie.category), id: "movie-category" %>
+      </div>
     </div>
 
 

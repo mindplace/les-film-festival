@@ -1,6 +1,6 @@
 
 <div class="container-fluid">
-<h2><%= @category.title %> Selections</h2>
+  <h2 class="category-show-header"><span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span> <span class="splash-color">//</span> <%= @category.title %> Selections</h2>
 
 
 <% @category.movies.each do |movie| %>

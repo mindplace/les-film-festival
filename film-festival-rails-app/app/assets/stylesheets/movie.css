@@ -1,6 +1,26 @@
+#movie-show-container {
+  margin-bottom: 1.5em;
+}
+
+.movie-box {
+  border: 3px solid #BB4F22;
+  padding: 2% 2% 4% 5%;
+  margin: 2%;
+  display: block;
+  flex-grow: 1;
+}
+
 #movie-category {
   font-size: .75em;
+  color: #777;
 }
+
+#movie-category:hover {
+  color: #BB4F22;
+  transition: color 0.5s ease;
+  text-decoration: none;
+}
+
 
 #reviews-container {
   border-bottom: 1px solid black;
@@ -27,7 +47,7 @@
 }
 
 .review-sub-info a {
-  color: black;
+  color: #777;
 }
 
 .review-sub-info a:hover {
@@ -68,7 +88,7 @@
 }
 
 .comment-sub-info a {
-  color: black;
+  color: #777;
 }
 
 .comment-sub-info a:hover {
@@ -86,7 +106,7 @@
 }
 
 a {
-  color: black;
+  color: #777;
 }
 
 a:hover {
