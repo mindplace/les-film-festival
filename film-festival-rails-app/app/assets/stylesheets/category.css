@@ -35,6 +35,7 @@
   transition: color 0.5s ease;
 }
 
+
 .category-show-header {
   margin-left: .75em;
   color: #777;
@@ -48,3 +49,4 @@
   transition: color 0.5s ease;
   text-decoration: none;
 }
+
