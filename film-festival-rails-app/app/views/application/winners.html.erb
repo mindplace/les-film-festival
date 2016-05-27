@@ -3,7 +3,7 @@
     <div class="overall-winner">
       <div class="inner-overall-winner">
         <h2>Overall Winner</h2>
-        <h1><%= link_to @overall_winner.title, movie_path(@overall_winner) %></h1>
+        <h1><%= link_to @overall_winner.title, movie_path(@overall_winner), id: "winner-link" %></h1>
         <h2><%= render partial: "shared/#{number_to_word(@overall_winner.average_rating.round)}_star" %></h2>
       </div>
     </div>
