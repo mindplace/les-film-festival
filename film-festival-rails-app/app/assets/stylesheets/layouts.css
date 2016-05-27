@@ -56,6 +56,9 @@ footer ul li {
   text-decoration: none;
   color: #D95C27;
 }
+.venue-box ul {
+  list-style: none;
+}
 .special-h {
   padding: 2% 0 2% 3%;
 }
