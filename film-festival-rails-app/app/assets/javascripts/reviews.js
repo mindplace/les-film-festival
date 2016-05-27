@@ -11,4 +11,3 @@ $("#reviews_all_link").on("click", function(e){
   $("#reviews_all_list").show();
 });
 });
-
