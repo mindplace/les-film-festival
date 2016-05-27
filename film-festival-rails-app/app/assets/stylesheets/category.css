@@ -22,7 +22,8 @@
 }*/
 
 .category-index-header {
-  margin-left: 1.5em;
+  /*margin-left: 1.5em;*/
+  color: #777;
 }
 
 .venue-box  .category-index-h2 a {
@@ -32,5 +33,20 @@
 .venue-box  .category-index-h2 a:hover {
   color: #BB4F22;
   transition: color 0.5s ease;
+}
+
+
+.category-show-header {
+  /*margin-left: .75em;*/
+  color: #777;
+}
+
+#category-back-link {
+  font-size: .75em;
+}
+#category-back-link a:hover {
+  color: #BB4F22;
+  transition: color 0.5s ease;
+  text-decoration: none;
 }
 
