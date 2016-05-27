@@ -1,20 +1,25 @@
+<div class="container">
+  <div class="venue-container">
+    <div class="venue-box black-box">
+      <h2 class="category-show-header"><span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span> <span class="splash-color">//</span> <%= @category.title %> Selections</h2>
+    </div>
+  </div>
 
-<div class="container-fluid">
-  <h2 class="category-show-header"><span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span> <span class="splash-color">//</span> <%= @category.title %> Selections</h2>
 
-
-<% @category.movies.each do |movie| %>
-<div class="venue-box">
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
-  <h4>Number of Reviews: <%= movie.number_of_reviews %></h4>
-  <% if movie.average_rating.is_a?(Float) && movie.average_rating.round > 0%>
-  <h4><%= render partial: "shared/#{number_to_word(movie.average_rating.round)}_star" %></h4>
-  <% elsif movie.average_rating.is_a?(Float) && movie.average_rating.round < 1 %>
-    <h4>Average Rating: less than 1 star</h4>
-  <% else %>
-    <h4><%= movie.average_rating %></h4>
-  <% end %>
-</div>
-<% end %>
+  <div class="venue-container">
+    <% @category.movies.each do |movie| %>
+    <div class="venue-box">
+      <h2><%= link_to movie.title, movie_path(movie) %></h2>
+      <h4>Number of Reviews: <%= movie.number_of_reviews %></h4>
+      <% if movie.average_rating.is_a?(Float) && movie.average_rating.round > 0%>
+      <h4><%= render partial: "shared/#{number_to_word(movie.average_rating.round)}_star" %></h4>
+      <% elsif movie.average_rating.is_a?(Float) && movie.average_rating.round < 1 %>
+        <h4>Average Rating: less than 1 star</h4>
+      <% else %>
+        <h4><%= movie.average_rating %></h4>
+      <% end %>
+    </div>
+    <% end %>
+  </div
 </div>
 
