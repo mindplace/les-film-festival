@@ -11,7 +11,7 @@
       <h2><%= link_to movie.title, movie_path(movie) %></h2>
       <h4>Number of Reviews: <%= movie.number_of_reviews %></h4>
       <% if movie.average_rating.is_a?(Float) && movie.average_rating.round > 0%>
-      <h4><%= render partial: "shared/#{number_to_word(movie.average_rating.round)}_star" %></h4>
+      <h4><%= render partial: "shared/#{number_to_word(movie.average_rating.round)}_star", locals: { size: "30x30" } %></h4>
       <% elsif movie.average_rating.is_a?(Float) && movie.average_rating.round < 1 %>
         <h4>Average Rating: less than 1 star</h4>
       <% else %>
@@ -19,5 +19,5 @@
       <% end %>
     </div>
     <% end %>
-  </div
+  </div>
 </div>

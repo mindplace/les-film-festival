@@ -28,7 +28,7 @@
 }
 
 .review-info {
-  border-bottom: 1px solid #BB4F22;
+  /*border-bottom: 1px solid #BB4F22;*/
   margin-left: 1.5em;
   margin-top: 1.5em;
   padding-bottom: .5em;
@@ -73,11 +73,16 @@
 
 .comment-info {
   margin-left: 1.5em;
+  border-left: 1px solid black;
+  padding-left: 10px;
+}
+
+.leave-comment-info {
+  margin-left: 1.5em;
 }
 
 .comment-username {
   font-size: .75em;
-
 }
 
 .comment-sub-info {
