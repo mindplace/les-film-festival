@@ -10,7 +10,7 @@
   margin-bottom: 0;
 }
 #header-image {
-  background-image: url(/assets/header.jpg);
+  background: image-url("header.jpg");
   background-size: cover !important;
   color: white;
   text-align: center;
