@@ -9,12 +9,6 @@
 .navbar-default {
   margin-bottom: 0;
 }
-#header-image {
-  background: image-url("header.jpg");
-  background-size: cover !important;
-  color: white;
-  text-align: center;
-}
 .custom-header {
   background-color: rgba(187, 79, 34, 0.4);
   padding: 250px 0 250px 0;
@@ -72,7 +66,7 @@ footer ul li {
   width: 40%;
 }
 .overall-winner {
-  background: image-url("header.jpg");
+  background: url("header.jpg");
   background-size: cover !important;
   border: 3px solid #BB4F22;
   padding: 5%;
