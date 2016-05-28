@@ -72,7 +72,7 @@ footer ul li {
   width: 40%;
 }
 .overall-winner {
-  background-image: url(/assets/header.jpg);
+  background: image-url("header.jpg");
   background-size: cover !important;
   border: 3px solid #BB4F22;
   padding: 5%;
