@@ -6,7 +6,7 @@
   </div>
 
   <div class="venue-container">
-    <% @category.movies.each do |movie| %>
+    <% Movie.sort_by_ratings(@category.movies).each do |movie| %>
     <div class="venue-box">
       <h2><%= link_to movie.title, movie_path(movie) %></h2>
       <h4>Number of Reviews: <%= movie.number_of_reviews %></h4>

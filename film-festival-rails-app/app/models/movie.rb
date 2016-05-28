@@ -46,6 +46,12 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  def self.sort_by_ratings(movies)
+    rated = movies.select{|movie| movie.average_rating.is_a?(Float)}.sort_by{|movie| movie.average_rating}.reverse
+    unrated = movies.select{|movie| movie.average_rating.is_a?(String)}
+    rated + unrated
+  end
+
   def self.four_samples
     sample_ids = [rand(10), rand(11..20), rand(21..30), rand(31..40)]
     sample_ids.map do |id|
