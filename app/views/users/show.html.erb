@@ -1,0 +1,37 @@
+<main class="Site-content">
+
+  <div class="container">
+    <div class="venue-container">
+      <div class="venue-box black-box">
+        <h1><%= @user.username %></h1>
+        <% if @user.judge? %>
+          <p>Role: <%= @user.role.capitalize %></p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="venue-container">
+      <% unless @user.reviews.empty? %>
+        <div class="venue-box">
+          <h2><%= @user.username %>'s reviews:</h2>
+          <ul>
+            <% @user.reviews.each do |review| %>
+              <li>Reviewed <%= link_to review.movie.title, movie_path(review.movie) %>, <%= review.comments.length %> comments</li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <% unless @user.comments.empty? %>
+        <div class="venue-box">
+          <h2><%= @user.username %>'s comments:</h2>
+          <ul>
+            <% @user.comments.each do |comment| %>
+              <li><%= link_to comment.review.movie.title, movie_path(comment.review.movie) %>: <%= comment.blurb %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

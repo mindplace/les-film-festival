@@ -1,0 +1,15 @@
+<%= form_for :review, :url => movie_review_path, html: { id: "review_form", :method => :put} do |f| %>
+
+<div class="row-xs-3 form_group">
+  <%= f.label :description %>:
+  <%= f.text_area :description, class: 'form-control' %><br>
+</div>
+
+<div class="row-xs-3 form_group">
+  <%= f.label :stars %>:
+  <%= f.number_field(:stars, in: 1.0..5.0, step: 0.5) %>
+</div>
+<br>
+
+  <%= f.submit "Update post", class: "btn btn-success"%>
+<% end %>

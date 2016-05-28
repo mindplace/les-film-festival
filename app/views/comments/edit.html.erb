@@ -1,0 +1,11 @@
+<main class="Site-content">
+<div class="container">
+
+<h1>Edit Comment to a review for <%= @comment.review.movie.title %></h1>
+
+   <%= render partial: "shared/error_messages", locals: {object: @comment} %>
+
+<%= render partial: "comment_edit_form" %>
+
+</div>
+</main>

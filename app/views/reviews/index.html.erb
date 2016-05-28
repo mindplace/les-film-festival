@@ -1,0 +1,148 @@
+<main class="Site-content">
+  <div class="container">
+
+    <ul class="nav nav-tabs padded-nav">
+      <li class="active"><%= link_to "All Recent Reviews", reviews_path, :id => "reviews" %></li>
+      <li><%= link_to "Drama", reviews_path, :id => "drama" %></li>
+      <li><%= link_to "Comedy", reviews_path, :id => "comedy" %></li>
+      <li><%= link_to "Thriller/Horror", reviews_path, :id => "thriller" %></li>
+      <li><%= link_to "Musical", reviews_path, :id => "musical" %></li>
+      <li><%= link_to "Action/Adventure", reviews_path, :id => "action" %></li>
+      <li><%= link_to "Documentary", reviews_path, :id => "documentary" %></li>
+    </ul>
+
+      <div id="reviews-category" class="category">
+        <div class="venue-container">
+          <div class="venue-box black-box">
+            <h2 class="category-show-header">
+              <span id="category-back-link"><%= link_to "Reviews", reviews_path, class: "category-show-header" %></span>
+              <span class="splash-color">//</span> All Recent Reviews
+            </h2>
+          </div>
+        </div>
+
+        <div class="venue-container">
+          <% @reviews.reverse[0..10].each do |review| %>
+            <div class="review-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="drama-category" class="category">
+        <div class="venue-container">
+          <div class="venue-box black-box">
+            <h2 class="category-show-header">
+              <span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span>
+              <span class="splash-color">//</span> <%= @drama.title %> Selections
+            </h2>
+          </div>
+        </div>
+
+        <div class="venue-container">
+          <% @drama.five_most_recent_reviews.each do |review| %>
+            <div class="review-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="comedy-category" class="category">
+        <div class="venue-container">
+          <div class="venue-box black-box">
+            <h2 class="category-show-header">
+              <span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span>
+              <span class="splash-color">//</span> <%= @comedy.title %> Selections
+            </h2>
+          </div>
+        </div>
+
+        <div class="venue-container">
+          <% @comedy.five_most_recent_reviews.each do |review| %>
+            <div class="review-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="thriller-category" class="category">
+        <div class="venue-container">
+          <div class="venue-box black-box">
+            <h2 class="category-show-header">
+              <span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span>
+              <span class="splash-color">//</span> <%= @thriller.title %> Selections
+            </h2>
+          </div>
+        </div>
+
+        <div class="venue-container">
+          <% @thriller.five_most_recent_reviews.each do |review| %>
+            <div class="review-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="musical-category" class="category">
+        <div class="venue-container">
+          <div class="venue-box black-box">
+            <h2 class="category-show-header">
+              <span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span>
+              <span class="splash-color">//</span> <%= @musical.title %> Selections
+            </h2>
+          </div>
+        </div>
+
+        <div class="venue-container">
+          <% @musical.five_most_recent_reviews.each do |review| %>
+            <div class="review-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="action-category" class="category">
+        <div class="venue-container">
+          <div class="venue-box black-box">
+            <h2 class="category-show-header">
+              <span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span>
+              <span class="splash-color">//</span> <%= @action.title %> Selections
+            </h2>
+          </div>
+        </div>
+
+        <div class="venue-container">
+          <% @action.five_most_recent_reviews.each do |review| %>
+            <div class="review-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="documentary-category" class="category">
+        <div class="venue-container">
+          <div class="venue-box black-box">
+            <h2 class="category-show-header">
+              <span id="category-back-link"><%= link_to "Categories", categories_path, class: "category-show-header" %></span>
+              <span class="splash-color">//</span> <%= @documentary.title %> Selections
+            </h2>
+          </div>
+        </div>
+
+        <div class="venue-container">
+          <% @documentary.five_most_recent_reviews.each do |review| %>
+            <div class="review-box">
+              <%= render partial: "individual_review", locals: { review: review} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+  </div>
+</main>

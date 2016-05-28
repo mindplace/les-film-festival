@@ -1,0 +1,9 @@
+<%= form_for :comment, :url => movie_review_comment_path, html: { id: "comment_form", :method => :put} do |f| %>
+
+<div class="row-xs-3 form_group">
+  <%= f.label :body %>:
+  <%= f.text_area :body, class: 'form-control' %>
+</div><br>
+
+  <%= f.submit "Edit comment", class: "btn btn-success"  %>
+<% end %>
