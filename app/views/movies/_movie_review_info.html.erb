@@ -1,6 +1,7 @@
 <div class="review-info">
-  <p><%= render partial: "shared/#{number_to_word(review.stars.round)}_star", locals: { size: "15x15"} %></p>
+  <%= render partial: "shared/#{number_to_word(review.stars.round)}_star", locals: { size: "15x15"} %><br/>
   <p><%= review.description %></p>
+
   <ul class="review-sub-info">
     <% if review.user.role == "judge" %>
       <li><span class="splash-color">Reviewer: </span><%= link_to review.user.username, judges_path %></li>
