@@ -4,7 +4,8 @@
   transition: color 0.5s ease;
 }
 .overall-winner {
-  background-image: url(header.jpg);
+  /*background-image: url(header.jpg); Does not show up on heroku, shows up on local */
+  background-image: url(assets/header.jpg);
   background-size: cover !important;
   border: 3px solid #BB4F22;
   padding: 5%;
