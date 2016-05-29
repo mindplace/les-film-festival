@@ -1,7 +1,6 @@
 #movie-show-container {
   margin-bottom: 1.5em;
 }
-
 .movie-box {
   border: 3px solid #BB4F22;
   padding: 2% 2% 4% 5%;
@@ -9,116 +8,91 @@
   display: block;
   flex-grow: 1;
 }
-
 #movie-category {
   font-size: .75em;
   color: #777;
 }
-
 #movie-category:hover {
   color: #BB4F22;
   transition: color 0.5s ease;
   text-decoration: none;
 }
-
-
 #reviews-container {
   padding-bottom: 2em;
   margin-left: 2%;
 }
-
 .review-info {
-  /*border-bottom: 1px solid #BB4F22;*/
   margin-left: 1.5em;
   margin-top: 1.5em;
   padding-bottom: .5em;
 }
-
 .review-info p {
   display: inline-block;
   margin-right: .75em;
 }
-
 .review-sub-info {
   display: block;
   font-size: .75em;
   padding: 0;
   margin-top: -1em;
 }
-
 .review-sub-info a {
   color: #777;
 }
-
 .review-sub-info a:hover {
   color: #BB4F22;
   transition: color 0.5s ease;
   text-decoration: none;
 }
-
 .review-sub-info li {
   display: inline-block;
   list-style: none;
 }
-
 #movie-show-bottom {
-  /*margin-top: 1.5em;*/
   font-size: 1.5em;
   margin-left: 2%;
 }
-
 #signup-login-to-post > p {
   font-size: .75em;
 }
-
 .comment-info {
   margin-left: 1.5em;
   border-left: 1px solid black;
   padding-left: 10px;
 }
-
 .leave-comment-info {
   margin-left: 1.5em;
 }
-
 .comment-username {
   font-size: .75em;
 }
-
 .comment-sub-info {
   display: block;
   padding: 0;
   margin-top: -1em;
 }
-
 .comment-sub-info li {
   display: inline-block;
   list-style: none;
   font-size: .75em;
 }
-
 .comment-sub-info a {
   color: #777;
 }
-
 .comment-sub-info a:hover {
   color: #BB4F22;
   transition: color 0.5s ease;
   text-decoration: none;
 }
-
 .comment-edit-delete {
   display: inline-block;
 }
-
 .splash-color {
   color: #BB4F22;
 }
-
 a {
   color: #777;
 }
-
 a:hover {
   color: #BB4F22;
 }

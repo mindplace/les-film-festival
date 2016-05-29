@@ -3,3 +3,19 @@
   color: #000;
   transition: color 0.5s ease;
 }
+.overall-winner {
+  background-image: url(header.jpg);
+  background-size: cover !important;
+  border: 3px solid #BB4F22;
+  padding: 5%;
+  text-align: center;
+  margin: 1% 0;
+}
+.inner-overall-winner {
+  background-color: rgba(187, 79, 34, 0.6);
+  padding: 2%;
+  color: white;
+}
+.inner-overall-winner a {
+  color: white;
+}
