@@ -10,7 +10,7 @@
         <% @judges.each do | judge | %>
           <div class="venue-box">
             <h3><%= judge.username %></h3>
-            <p><span class="splash-color">Biography:</span> <%= Faker::Lorem.paragraph %></p>
+            <p><span class="splash-color">Biography:</span> <%= judge.username %> <%= User::BIOGRAPHY.sample %></p>
           </div>
         <% end %>
     </div>
