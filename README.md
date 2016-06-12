@@ -1,4 +1,4 @@
-# Lower East Side Film Festival
+# [Lower East Side Film Festival](https://les-film-festival.herokuapp.com/)
 
 A fake film festival! Built to work on our Rails, jQuery, and Bootstrap skills.
 
