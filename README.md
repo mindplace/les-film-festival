@@ -1,21 +1,8 @@
-## Git workflow:
+# [Lower East Side Film Festival](https://les-film-festival.herokuapp.com/)
 
-### update your local repo  
-git checkout master  
-git pull origin master  
+A fake film festival! Built to work on our Rails, jQuery, and Bootstrap skills.
 
-### make changes  
-git checkout -b 'feature'  
-*make changes*  
-*add*  
-*commit*  
-
-### re-update local repo  
-git checkout master  
-git pull origin master  
-
-### push your changes  
-git checkout 'feature'  
-git rebase master      
-git push origin 'feature'  
-**make a pull request**  
+## Who we are
+[John Colella](https://github.com/jmcolella)
+[Esther Leytush](https://github.com/mindplace)
+[Katherine Broner](https://github.com/katherinebroner)
