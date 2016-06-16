@@ -12,7 +12,7 @@
       <li>|</li>
       <li><%= link_to "edit review", edit_movie_review_path(review.movie, review) %></li>
       <li>|</li>
-      <li><%= link_to "delete review", [review.movie, review], method: :delete, data: {confirm: "Are you sure?"} %></li>
+      <li><%= link_to "delete review", review_delete_path(review.movie, review), class: "delete-link", data: {confirm: "Are you sure?"} %></li>
     <% end %>
   </ul>
 
