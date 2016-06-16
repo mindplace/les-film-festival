@@ -38,7 +38,7 @@ $(document).ready(function() {
     }.bind(this))
   });
 
-  // delete review
+  // delete user review
   $("#list-of-user-reviews").on("click", ".delete-link", function(e) {
     e.preventDefault();
     var url = $(e.target).attr("href");
@@ -50,7 +50,20 @@ $(document).ready(function() {
     }).done(function(response){
       $(this).closest(".review-info").remove();
     }.bind(this));
+  });
 
+  // delete judge review
+  $("#list-of-judge-reviews").on("click", ".delete-link", function(e) {
+    e.preventDefault();
+    var url = $(e.target).attr("href");
+    // var type = $(e.target).attr("data-method");
+
+    $.ajax({
+      url: url,
+      type: "GET"
+    }).done(function(response){
+      $(this).closest(".review-info").remove();
+    }.bind(this));
   });
 
 });
