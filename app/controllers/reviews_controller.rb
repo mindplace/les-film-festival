@@ -14,7 +14,12 @@ class ReviewsController < ApplicationController
     if !logged_in?
       redirect_to root_path
     else
-      @review = Review.new
+      if request.xhr?
+        @review = Review.new
+        render partial: "review_form_ajax", layout: false, locals: {review: @review}
+      else
+        @review = Review.new
+      end
     end
   end
 
